@@ -832,13 +832,6 @@ func (s *Store) GuildMemberCount(ctx context.Context, guildID string) (int, erro
 	return int(count), err
 }
 
-func (s *Store) IncompleteMessageChannelIDs(ctx context.Context, guildID string) ([]string, error) {
-	if guildID != "" {
-		return s.q.ListIncompleteMessageChannelIDsByGuild(ctx, guildID)
-	}
-	return s.q.ListIncompleteMessageChannelIDs(ctx)
-}
-
 func (s *Store) Status(ctx context.Context, dbPath, defaultGuildID string) (Status, error) {
 	status := Status{DBPath: dbPath, DefaultGuildID: defaultGuildID}
 	guildCount, err := s.q.CountGuilds(ctx)

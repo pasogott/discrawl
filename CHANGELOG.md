@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Avoid repeated requests to unavailable Discord channels for seven days during routine sync, while full and targeted syncs retry immediately, unavailable-only backlogs keep discovering channels, and doctor reports marker health using the same timestamp policy. Thanks @rnavarro.
+
 ## 0.15.0 - 2026-09-11
 
 **Highlights:** Keep embeddings current during continuous capture, recover restart gaps on demand, and inspect live archive freshness.
